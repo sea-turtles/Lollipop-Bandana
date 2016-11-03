@@ -8,11 +8,12 @@ module.exports = {
   env: {
     'es6': true
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       'jsx': true
     },
-    ecmaVersion: 6,
+    ecmaVersion: 7,
     sourceType: "module"
   },
   rules: {
