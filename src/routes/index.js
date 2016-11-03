@@ -6,12 +6,11 @@ import LoginRoute from './Login';
 import DashboardRoute from './Secure/Dashboard';
 import NotFound from './NotFound';
 import AuthService from '../auth0/utils/AuthService';
+import AppRoute from './App'
 
 // FIXME: move codes in a different file
 const auth = new AuthService('0xwwsj6Zcwrl3g73CaVnNBqimlcYFUev', 'roomly.auth0.com');
 
-/*  Note: Instead of using JSX, we recommend using react-router
-    PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => {
   const requireAuth = (nextState, replace) => {
