@@ -9,6 +9,10 @@ const config = require('../config');
 const app = express();
 const paths = config.utils_paths;
 
+const search = require('./fbgraph/search').search(app);
+
+//put all routes above this line!
+
 // FIXME? if access_token is missing for routes other than '/', redirect to '/'
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement universal

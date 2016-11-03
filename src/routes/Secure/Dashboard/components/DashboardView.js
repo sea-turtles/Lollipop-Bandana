@@ -208,9 +208,3 @@ class DashboardView extends React.Component {
 }
 
 export default DashboardView;
-
-        // <ul className='search-results'>
-        //   {searchResults.map((result, index) => {
-        //     return (<li key={index}>{result.user}</li>);
-        //   })}
-        // </ul>
