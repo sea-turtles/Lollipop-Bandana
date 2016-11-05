@@ -1,4 +1,4 @@
-fakeLikes = [
+var fakeLikes = [
   { id: 0, name: 'The Matrix' },
   { id: 1, name: 'The Shining' },
   { id: 2, name: 'The Birds' },
@@ -37,7 +37,24 @@ var likesGen = function(numLikes) {
 };
 
 
-fakeHouseSettings = [
+var fakeLandlordSettings = [
+
+];
+
+var fakeHouses = [
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {}
+];
+
+exports.fakeHouseSettings = [
   { id: 0, title: 'Only Guys -- Newly remodeled 2br apartment in Central Richmond Dist Location', genderPref: 0,
   city: 'San Francisco', state: 'CA', price: 2580, smoking: false, pets: false,
   housePics: ['src/static/fakeData/houses/0-1',
@@ -100,7 +117,7 @@ fakeHouseSettings = [
   'src/static/fakeData/houses/9-4'] },
 ];
 
-fakeFriends = [
+exports.fakeFriends = [
   { name: 'Cate Blanchett', id: 10, pic: 'src/static/fakeData/profilePics/cateblanchett.jpg' },
   { name: 'Abraham Lincoln', id: 11, pic: 'src/static/fakeData/profilePics/abraham.jpg' },
   { name: 'Thomas Jefferson', id: 12, pic: 'src/static/fakeData/profilePics/thomasjefferson.jpg' },
@@ -122,61 +139,88 @@ fakeFriends = [
   { name: 'Kid Cudi', id: 28, pic: 'src/static/fakeData/profilePics/kidcudi.jpg' }
 ];
 
-fakeFriendsList = [
-  [fakeFriends[0], fakeFriends[1], fakeFriends[2], fakeFriends[3], fakeFriends[4], fakeFriends[5]],
-  [fakeFriends[4], fakeFriends[5], fakeFriends[6], fakeFriends[7], fakeFriends[8], fakeFriends[9]],
-  [fakeFriends[8], fakeFriends[9], fakeFriends[10], fakeFriends[11], fakeFriends[12], fakeFriends[13]],
-  [fakeFriends[12], fakeFriends[13], fakeFriends[14], fakeFriends[15], fakeFriends[16], fakeFriends[17]],
-  [fakeFriends[16], fakeFriends[17], fakeFriends[18], fakeFriends[0], fakeFriends[1], fakeFriends[2]],
-  [fakeFriends[1], fakeFriends[2], fakeFriends[3], fakeFriends[4], fakeFriends[5], fakeFriends[6]],
-  [fakeFriends[5], fakeFriends[6], fakeFriends[7], fakeFriends[8], fakeFriends[9], fakeFriends[10]],
-  [fakeFriends[9], fakeFriends[10], fakeFriends[11], fakeFriends[12], fakeFriends[13], fakeFriends[14]],
-  [fakeFriends[13], fakeFriends[14], fakeFriends[15], fakeFriends[16], fakeFriends[17], fakeFriends[18]],
-  [fakeFriends[0], fakeFriends[2], fakeFriends[4], fakeFriends[6], fakeFriends[8], fakeFriends[10]],
-  [fakeFriends[1], fakeFriends[3], fakeFriends[5], fakeFriends[7], fakeFriends[9], fakeFriends[11]],
-  [fakeFriends[12], fakeFriends[13], fakeFriends[14], fakeFriends[15], fakeFriends[16], fakeFriends[17]],
-  [fakeFriends[18], fakeFriends[2], fakeFriends[5], fakeFriends[9], fakeFriends[13], fakeFriends[15]],
-  [fakeFriends[1], fakeFriends[4], fakeFriends[7], fakeFriends[9], fakeFriends[11], fakeFriends[16]],
-  [fakeFriends[0], fakeFriends[2], fakeFriends[6], fakeFriends[8], fakeFriends[10], fakeFriends[13]],
-  [fakeFriends[15], fakeFriends[16], fakeFriends[17], fakeFriends[18], fakeFriends[1], fakeFriends[2]],
-  [fakeFriends[3], fakeFriends[5], fakeFriends[7], fakeFriends[9], fakeFriends[11], fakeFriends[13]],
-  [fakeFriends[9], fakeFriends[11], fakeFriends[13], fakeFriends[0], fakeFriends[2], fakeFriends[8]],
-  [fakeFriends[0], fakeFriends[7], fakeFriends[4], fakeFriends[9], fakeFriends[13], fakeFriends[17]]
+exports.fakeLandlords = [
+  { name: 'Cate Blanchett', id: 0, pic: 'src/static/fakeData/profilePics/cateblanchett.jpg',
+  description: 'Hate smoking and animals!! Please be clean.', house: exports.fakeHouseSettings[0] },
+  { name: 'Abraham Lincoln', id: 1, pic: 'src/static/fakeData/profilePics/abraham.jpg',
+  description: 'Four score and seven years ago, our forefathers came forth to this nation', house: exports.fakeHouseSettings[1] },
+  { name: 'Thomas Jefferson', id: 2, pic: 'src/static/fakeData/profilePics/thomasjefferson.jpg',
+  description: 'The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants.',
+  house: exports.fakeHouseSettings[2] },
+  { name: 'Benjamin Franklin', id: 3, pic: 'src/static/fakeData/profilePics/benfranklin.jpg',
+  description: 'Love rainy days. Let\'s go fly a kite in the rain!', house: exports.fakeHouseSettings[3] },
+  { name: 'Daft Punk', id: 4, pic: 'src/static/fakeData/profilePics/daftpunk.jpg',
+  description: 'Dynamic Duo searching for fellow masked marauders', house: exports.fakeHouseSettings[4] },
+  { name: 'Bob Ross', id: 5, pic: 'src/static/fakeData/profilePics/bobross.jpg',
+  description: 'Ex-Air Force Master Sergeant. There are no accidents, just happy little mistakes.',
+  house: exports.fakeHouseSettings[5] },
+  { name: 'JP Zivalich', id: 6, pic: 'src/static/fakeData/profilePics/jp.jpg',
+  description: 'do you like music and the Belt Game? This place is for you!', house: exports.fakeHouseSettings[6] },
+  { name: 'Eric Eakin', id: 7, pic: 'src/static/fakeData/profilePics/eric.jpg',
+  description: 'My pictures are pink and scented. I think it gives it that little extra something.',
+  house: exports.fakeHouseSettings[7] },
+  { name: 'Eugene Cho', id: 8, pic: 'src/static/fakeData/profilePics/eugene.jpg',
+  description: 'Love to cook so I hope you love to eat! No smoking!', house: exports.fakeHouseSettings[8] },
+  { name: 'Gilles Bouvier', id: 9, pic: 'src/static/fakeData/profilePics/gilles.jpg',
+  description: 'French Swing Dance King. Also build computer chips and love to travel. Serious inquiries only please!',
+  house: exports.fakeHouseSettings[9] },
+];
+
+exports.fakeFriendsList = [
+  [exports.fakeFriends[0], exports.fakeFriends[1], exports.fakeFriends[2], exports.fakeFriends[3], exports.fakeFriends[4], exports.fakeFriends[5]],
+  [exports.fakeFriends[4], exports.fakeFriends[5], exports.fakeFriends[6], exports.fakeFriends[7], exports.fakeFriends[8], exports.fakeFriends[9]],
+  [exports.fakeFriends[8], exports.fakeFriends[9], exports.fakeFriends[10], exports.fakeFriends[11], exports.fakeFriends[12], exports.fakeFriends[13]],
+  [exports.fakeFriends[12], exports.fakeFriends[13], exports.fakeFriends[14], exports.fakeFriends[15], exports.fakeFriends[16], exports.fakeFriends[17]],
+  [exports.fakeFriends[16], exports.fakeFriends[17], exports.fakeFriends[18], exports.fakeFriends[0], exports.fakeFriends[1], exports.fakeFriends[2]],
+  [exports.fakeFriends[1], exports.fakeFriends[2], exports.fakeFriends[3], exports.fakeFriends[4], exports.fakeFriends[5], exports.fakeFriends[6]],
+  [exports.fakeFriends[5], exports.fakeFriends[6], exports.fakeFriends[7], exports.fakeFriends[8], exports.fakeFriends[9], exports.fakeFriends[10]],
+  [exports.fakeFriends[9], exports.fakeFriends[10], exports.fakeFriends[11], exports.fakeFriends[12], exports.fakeFriends[13], exports.fakeFriends[14]],
+  [exports.fakeFriends[13], exports.fakeFriends[14], exports.fakeFriends[15], exports.fakeFriends[16], exports.fakeFriends[17], exports.fakeFriends[18]],
+  [exports.fakeFriends[0], exports.fakeFriends[2], exports.fakeFriends[4], exports.fakeFriends[6], exports.fakeFriends[8], exports.fakeFriends[10]],
+  [exports.fakeFriends[1], exports.fakeFriends[3], exports.fakeFriends[5], exports.fakeFriends[7], exports.fakeFriends[9], exports.fakeFriends[11]],
+  [exports.fakeFriends[12], exports.fakeFriends[13], exports.fakeFriends[14], exports.fakeFriends[15], exports.fakeFriends[16], exports.fakeFriends[17]],
+  [exports.fakeFriends[18], exports.fakeFriends[2], exports.fakeFriends[5], exports.fakeFriends[9], exports.fakeFriends[13], exports.fakeFriends[15]],
+  [exports.fakeFriends[1], exports.fakeFriends[4], exports.fakeFriends[7], exports.fakeFriends[9], exports.fakeFriends[11], exports.fakeFriends[16]],
+  [exports.fakeFriends[0], exports.fakeFriends[2], exports.fakeFriends[6], exports.fakeFriends[8], exports.fakeFriends[10], exports.fakeFriends[13]],
+  [exports.fakeFriends[15], exports.fakeFriends[16], exports.fakeFriends[17], exports.fakeFriends[18], exports.fakeFriends[1], exports.fakeFriends[2]],
+  [exports.fakeFriends[3], exports.fakeFriends[5], exports.fakeFriends[7], exports.fakeFriends[9], exports.fakeFriends[11], exports.fakeFriends[13]],
+  [exports.fakeFriends[9], exports.fakeFriends[11], exports.fakeFriends[13], exports.fakeFriends[0], exports.fakeFriends[2], exports.fakeFriends[8]],
+  [exports.fakeFriends[0], exports.fakeFriends[7], exports.fakeFriends[4], exports.fakeFriends[9], exports.fakeFriends[13], exports.fakeFriends[17]]
 ];
 
 
 exports.fakeLandlords = [
-  { name: 'Cate Blanchett', id: 0, friends: fakeFriends[0], likes: likesGen(4),
+  { name: 'Cate Blanchett', id: 0, friends: exports.fakeFriends[0], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/cateblanchett.jpg',
     description: 'Hate smoking and animals!! Please be clean.', house: fakeHouses[0] },
-  { name: 'Abraham Lincoln', id: 1, friends: fakeFriends[1], likes: likesGen(4),
+  { name: 'Abraham Lincoln', id: 1, friends: exports.fakeFriends[1], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/abraham.jpg',
     description: 'Four score and seven years ago, our forefathers came forth to this nation', house: fakeHouses[1] },
-  { name: 'Thomas Jefferson', id: 2, friends: fakeFriends[2], likes: likesGen(4),
+  { name: 'Thomas Jefferson', id: 2, friends: exports.fakeFriends[2], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/thomasjefferson.jpg',
     description: 'The tree of liberty must be refreshed from time to time with the blood of patriots and tyrants.',
     house: fakeHouses[2] },
-  { name: 'Benjamin Franklin', id: 3, friends: fakeFriends[3], likes: likesGen(4),
+  { name: 'Benjamin Franklin', id: 3, friends: exports.fakeFriends[3], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/benfranklin.jpg',
     description: 'Love rainy days. Let\'s go fly a kite in the rain!', house: fakeHouses[3] },
-  { name: 'Daft Punk', id: 4, friends: fakeFriends[4], likes: likesGen(4),
+  { name: 'Daft Punk', id: 4, friends: exports.fakeFriends[4], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/daftpunk.jpg',
     description: 'Dynamic Duo searching for fellow masked marauders', house: fakeHouses[4] },
-  { name: 'Bob Ross', id: 5, friends: fakeFriends[5], likes: likesGen(4),
+  { name: 'Bob Ross', id: 5, friends: exports.fakeFriends[5], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/bobross.jpg',
     description: 'Ex-Air Force Master Sergeant. There are no accidents, just happy little mistakes.',
     house: fakeHouses[5] },
-  { name: 'JP Zivalich', id: 6, friends: fakeFriends[6], likes: likesGen(4),
+  { name: 'JP Zivalich', id: 6, friends: exports.fakeFriends[6], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/jp.jpg',
     description: 'do you like music and the Belt Game? This place is for you!', house: fakeHouses[6] },
-  { name: 'Eric Eakin', id: 7, friends: fakeFriends[7], likes: likesGen(4),
+  { name: 'Eric Eakin', id: 7, friends: exports.fakeFriends[7], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/eric.jpg',
     description: 'My pictures are pink and scented. I think it gives it that little extra something.',
     house: fakeHouses[7] },
-  { name: 'Eugene Cho', id: 8, friends: fakeFriends[8], likes: likesGen(4),
+  { name: 'Eugene Cho', id: 8, friends: exports.fakeFriends[8], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/eugene.jpg',
     description: 'Love to cook so I hope you love to eat! No smoking!', house: fakeHouses[8] },
-  { name: 'Gilles Bouvier', id: 1103984516389431, friends: fakeFriends[9], likes: likesGen(4),
+  { name: 'Gilles Bouvier', id: 1103984516389431, friends: exports.fakeFriends[9], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/gilles.jpg',
     description: 'French Swing Dance King. Also love to travel. Serious inquiries only please!',
     house: fakeHouses[9] },
@@ -184,47 +228,47 @@ exports.fakeLandlords = [
 
 exports.fakeTenants = [
   { name: 'Tom Sawyer', id: 20, smoking: true, pets: true,
-    genderPref: 2, priceMin: 1000, priceMax: 2000, friends: fakeFriends[10],
+    genderPref: 2, priceMin: 1000, priceMax: 2000, friends: exports.fakeFriends[10],
     pic: 'src/static/fakeData/profilePics/tomsawyer.jpg', likes: likesGen(4),
     description: 'Chillest of chill, illest of ill. Let\'s paint a fence :)' },
   { name: 'Gary Oldman', id: 21, smoking: false, pets: true,
-    genderPref: 0, priceMin: 2500, priceMax: 5000, friends: fakeFriends[11],
+    genderPref: 0, priceMin: 2500, priceMax: 5000, friends: exports.fakeFriends[11],
     pic: 'src/static/fakeData/profilePics/garyoldman.jpg', likes: likesGen(4),
     description: 'Professional Chameleon looking for male roommate.' },
   { name: 'Huckleberry Finn', id: 22, smoking: true, pets: false,
-    genderPref: 1, priceMin: 1000, priceMax: 2000, friends: fakeFriends[12],
+    genderPref: 1, priceMin: 1000, priceMax: 2000, friends: exports.fakeFriends[12],
     pic: 'src/static/fakeData/profilePics/huckfinn.jpg', likes: likesGen(4),
     description: 'Looking for a lady, if you get my drift. That\'s a raft joke.' },
   { name: 'Jennifer Lawrence', id: 23, smoking: false, pets: true,
-    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: fakeFriends[13],
+    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: exports.fakeFriends[13],
     pic: 'src/static/fakeData/profilePics/jenniferlawrence.jpg', likes: likesGen(4),
     description: 'Classy and upbeat, please be clean and kind! Have a dog, Muppet!' },
   { name: 'Judy Dench', id: 24, smoking: true, pets: true,
-    genderPref: 1, priceMin: 2500, priceMax: 5000, friends: fakeFriends[14],
+    genderPref: 1, priceMin: 2500, priceMax: 5000, friends: exports.fakeFriends[14],
     pic: 'src/static/fakeData/profilePics/judydench.jpg', likes: likesGen(4),
     description: 'British Dame looking for a clean professional woman to live with. Must smoke and love cats!' },
   { name: 'Vladmir Putin', id: 25, smoking: true, pets: false,
-    genderPref: 0, priceMin: 1000, priceMax: 5000, friends: fakeFriends[15],
+    genderPref: 0, priceMin: 1000, priceMax: 5000, friends: exports.fakeFriends[15],
     pic: 'src/static/fakeData/profilePics/putin.jpg', likes: likesGen(4),
     description: 'I ride bear. True men only.' },
   { name: 'Ryan Gosling', id: 26, smoking: true, pets: true,
-    genderPref: 2, priceMin: 1000, priceMax: 2500, friends: fakeFriends[16],
+    genderPref: 2, priceMin: 1000, priceMax: 2500, friends: exports.fakeFriends[16],
     pic: 'src/static/fakeData/profilePics/ryangosling.jpg', likes: likesGen(4),
     description: 'Hollywood actor looking for sweet digs. Also, I can do the move from Dirty Dancing.' },
   { name: 'Scarlett Johansson', id: 27, smoking: false, pets: false,
-    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: fakeFriends[17],
+    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: exports.fakeFriends[17],
     pic: 'src/static/fakeData/profilePics/scarjo.jpg', likes: likesGen(4),
     description: 'In need of place immediately. Please let me know! Need lots of closet space.' },
   { name: 'Kid Cudi', id: 28, smoking: true, pets: true,
-    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: fakeFriends[18],
+    genderPref: 2, priceMin: 1000, priceMax: 5000, friends: exports.fakeFriends[18],
     pic: 'src/static/fakeData/profilePics/kidcudi.jpg', likes: likesGen(4),
     description: 'In search of perfection. No need to call me, I\'ll call you.' },
   { name: 'Gilles Bouvier', id: 29, priceMin: 1000, priceMax: 5000, smoking: false, pets: false,
-    genderPref: 2, friends: fakeFriends[9], likes: likesGen(4),
+    genderPref: 2, friends: exports.fakeFriends[9], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/gilles.jpg',
     description: 'French Swing Dance King. Also love to travel!' },
   { name: 'Eric Eakin', id: 111948542155151, priceMin: 1000, priceMax: 5000, smoking: false, pets: false,
-    genderPref: 2, friends: fakeFriends[7], likes: likesGen(4),
+    genderPref: 2, friends: exports.fakeFriends[7], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/eric.jpg',
     description: 'Photographer turned Programmer looking for a home',
     house: fakeHouses[7] }
@@ -243,14 +287,14 @@ exports.fakeUserInfo = {
   genderPref: 2,
   pic: 'https://scontent.xx.fbcdn.net/v/t1.0-1/c9.0.50.50/' +
   'p50x50/13428645_10105401440955833_9212030742952603035_n.jpg?oh=ffc9408bf179bab7d7ebb1e7b1804f04&oe=5892DCB5',
-  friends: fakeFriends[7],
+  friends: exports.fakeFriends[7],
   likes: likesGen(4)
 };
 
 
-exports.fakeFriends = [
-  { name: 'Eric', friends: this.f1, likes: this.l1 },
-  { name: 'Eugene', friends: this.f2, likes: this.l2 },
-  { name: 'Gilles', friends: this.f3, likes: this.l3 },
-  { name: 'JP', friends: this.f4, likes: this.l4 }
-];
+// exports.fakeFriends = [
+//   { name: 'Eric', friends: this.f1, likes: this.l1 },
+//   { name: 'Eugene', friends: this.f2, likes: this.l2 },
+//   { name: 'Gilles', friends: this.f3, likes: this.l3 },
+//   { name: 'JP', friends: this.f4, likes: this.l4 }
+// ];

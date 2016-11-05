@@ -124,7 +124,6 @@ class DashboardView extends React.Component {
               <span>
                 <Avatar src={ Avatar1 } />
                 <Avatar src={ Avatar2 } size={20}/>
-                <Avatar src={ Avatar3 } size={20}/>
               </span>
             }
             primaryText='$1700 - Available December 1, 2016 - Yearly'
@@ -137,19 +136,17 @@ class DashboardView extends React.Component {
             rightAvatar={
               <span>
                 <Avatar src={ Avatar1 } size={15} />
-                <Avatar src={ Avatar1 } size={15} />
-                <Avatar src={ Avatar1 } size={15} />
               </span>
             }
-            onTouchTap={this.handleOpen}
+            onTouchTap={ this.handleOpen }
           />
           <Dialog
             title='$1700 - San Francisco'
-            actions={actions}
-            modal={false}
-            open={this.state.open}
-            onRequestClose={this.handleClose}
-            autoScrollBodyContent={true}
+            actions={ actions }
+            modal={ false }
+            open={ this.state.open }
+            onRequestClose={ this.handleClose }
+            autoScrollBodyContent={ true }
           >
             <img src={ Room1 } className='roomView'/>
             Wow what an amazing room??
@@ -243,11 +240,6 @@ class DashboardView extends React.Component {
           className='muidocs-icon-action-home'
           onClick={ () => updateSearchCriteria({ dog: true, cat: false }) }
         />
-        <RaisedButton
-           label='Logout'
-           style={ styles.logoutButton }
-           onClick={ auth.logout.bind(this) }
-         />
       </div>
     );
   }
