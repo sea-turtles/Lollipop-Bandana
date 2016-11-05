@@ -117,11 +117,11 @@ CREATE TABLE `Pics` (
 -- Foreign Keys
 -- ---
 
-ALTER TABLE `House` ADD FOREIGN KEY (userId) REFERENCES `User` (`id`);
-ALTER TABLE `Want` ADD FOREIGN KEY (userId) REFERENCES `User` (`id`);
-ALTER TABLE `Friends` ADD FOREIGN KEY (userId) REFERENCES `User` (`id`);
-ALTER TABLE `Likes` ADD FOREIGN KEY (userId) REFERENCES `User` (`id`);
-ALTER TABLE `Pics` ADD FOREIGN KEY (houseId) REFERENCES `House` (`id`);
+ALTER TABLE `Houses` ADD FOREIGN KEY (userId) REFERENCES `Users` (`id`);
+ALTER TABLE `Wants` ADD FOREIGN KEY (userId) REFERENCES `Users` (`id`);
+ALTER TABLE `Friends` ADD FOREIGN KEY (userId) REFERENCES `Users` (`id`);
+ALTER TABLE `Likes` ADD FOREIGN KEY (userId) REFERENCES `Users` (`id`);
+ALTER TABLE `Pics` ADD FOREIGN KEY (houseId) REFERENCES `Houses` (`id`);
 
 -- ---
 -- Table Properties
