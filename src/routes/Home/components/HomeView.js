@@ -42,11 +42,16 @@ class HomeView extends React.Component {
   }
 
   render() {
+    // do not display anything if we are getting the access token back
+    if (this.props.location.hash.match(/^#access_token/)) {
+      return ( <div></div> );
+    }
+
     const style = { margin: 12 };
 
     return (
       <div className='jumbotron'>
-        <div className='container'>
+        <div className='container landing'>
           <img className='logo' alt='roomly' src={ LogoImage }/>
           <span className='sublogo'>Find your new roommate today!</span>
           <br/>

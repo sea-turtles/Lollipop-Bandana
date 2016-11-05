@@ -10,7 +10,7 @@ class NotFoundView extends React.Component {
 
   render() {
     return (
-      <div className="">
+      <div className=''>
         <h2>Not Found</h2>
       </div>
     );

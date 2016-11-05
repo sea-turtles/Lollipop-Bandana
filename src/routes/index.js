@@ -1,5 +1,6 @@
+//import HomeLayout from '../layouts/HomeLayout/HomeLayout';
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
-import Home from './Home';
+import HomeRoute from './Home';
 import LoginRoute from './Login';
 import DashboardRoute from './Secure/Dashboard';
 import SettingsRoute from './Secure/Settings';
@@ -10,7 +11,7 @@ import CounterRoute from './Counter';
 export const createRoutes = (store) => {
   const requireAuth = (nextState, replace) => {
     if (!auth.loggedIn()) {
-      replace({ pathname: '/login' });
+      replace({ pathname: '/' });
     }
   };
 
@@ -22,26 +23,20 @@ export const createRoutes = (store) => {
 
   return ({
     path        : '/',
-    indexRoute  : Home,
-    component   : CoreLayout,
+    indexRoute  : HomeRoute(store),
     childRoutes : [
       {
-        onEnter    : requireAuth,
-        childRoutes: [
+        onEnter     : requireAuth,
+        component   : CoreLayout,
+        childRoutes : [
           DashboardRoute(store),
           SettingsRoute(store)
         ]
       },
       {
-        onEnter     : requirePublic,
-        childRoutes : [
-          LoginRoute(store)
-        ]
-      },
-      {
-        path: '*',
-        indexRoute: NotFound,
-        status: 404
+        path       : '*',
+        indexRoute : NotFound,
+        status     : 404
       }
     ]
   });

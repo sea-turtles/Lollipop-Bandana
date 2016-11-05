@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { auth } from '../../auth0/auth';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Avatar from 'material-ui/Avatar';
@@ -24,20 +25,12 @@ const muiTheme = getMuiTheme({
 
 class Nav extends React.Component {
 
-  getPath () {
-    return '/profile/' + (Math.random() * 100 << 0);
-  }
-
   render () {
     return (
       <div className='navbar-height'>
         <MuiThemeProvider muiTheme={muiTheme}>
         <ul>
-          <li className='topLogo'><Link to='/'><img src={ Logo } class='pull-left' alt='Homepage' /></Link></li>
-          <li className='topItem'><Link to='/dashboard'>Dashboard</Link></li>
-          <li className='topItem'><Link to='/settings'>Settings</Link></li>
-          <li className='topItem'><Link to={this.getPath}>Profile</Link></li>
-          <li className='topItem'><a href='/auth/logout'>Logout</a></li>
+          <li className='topLogo'><Link to='/'><img src={ Logo } className='pull-left' alt='Homepage' /></Link></li>
           <li className='floatRight'>
           <IconMenu
             iconButtonElement={<Avatar

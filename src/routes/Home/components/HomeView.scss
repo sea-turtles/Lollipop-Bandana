@@ -78,14 +78,21 @@ a:hover {
 .sublogo {
 	color: white;
 	font-style: medium;
-	font-size: 20px; 
+	font-size: 20px;
 }
 
 .muidocs-icon-action-home {
   color: white;
 }
 
-.landing {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../assets/friends.jpg");
+.container.landing {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('../assets/friends.jpg');
   background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.jumbotron {
+  width: 100%;
+  height: 100vh;
 }

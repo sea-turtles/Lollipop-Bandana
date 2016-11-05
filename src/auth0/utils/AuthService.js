@@ -5,10 +5,15 @@ import { browserHistory } from 'react-router';
 import { post } from 'axios';
 
 export default class AuthService extends EventEmitter {
-  constructor(clientId, domain) {
+  constructor(clientId, domain, options) {
     super();
     // Configure Auth0
-    this.lock = new Auth0Lock(clientId, domain, {});
+    let auth0LockOptions = Object.assign({}, options || {}, {
+      //auth               : { redirectUrl: location + 'callback' },
+      theme              : { primaryColor: '#b81b1c' },
+      languageDictionary : { title: 'Roomly' }
+    });
+    this.lock = new Auth0Lock(clientId, domain, auth0LockOptions);
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this));
     // Add callback for lock `authorization_error` event
