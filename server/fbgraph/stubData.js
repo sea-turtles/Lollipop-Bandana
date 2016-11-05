@@ -178,7 +178,7 @@ exports.fakeLandlords = [
     description: 'Love to cook so I hope you love to eat! No smoking!', house: fakeHouses[8] },
   { name: 'Gilles Bouvier', id: 9, friends: fakeFriends[9], likes: likesGen(4),
     pic: 'src/static/fakeData/profilePics/gilles.jpg',
-    description: 'French Swing Dance King. Also build computer chips and love to travel. Serious inquiries only please!',
+    description: 'French Swing Dance King. Also love to travel. Serious inquiries only please!',
     house: fakeHouses[9] },
 ];
 
