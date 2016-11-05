@@ -40,6 +40,7 @@ class Nav extends React.Component {
             anchorOrigin={ { horizontal: 'right', vertical: 'top' } }
             targetOrigin={ { horizontal: 'right', vertical: 'top' } }
           >
+            <Link to='/dashboard'><MenuItem primaryText='Dashboard' /></Link>
             <Link to='/settings'><MenuItem primaryText='Settings' /></Link>
             
             <MenuItem primaryText='Sign out' onClick={ auth.logout.bind(this) }/>
