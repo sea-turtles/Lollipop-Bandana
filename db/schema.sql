@@ -1,3 +1,5 @@
+CREATE DATABASE roomly;
+
 USE roomly;
 
 -- ---

@@ -1,5 +1,5 @@
-/* eslint key-spacing:0 spaced-comment:0 */
 const path = require('path');
+/* eslint key-spacing:0 spaced-comment:0 */
 const debug = require('debug')('app:config');
 const argv = require('yargs').argv;
 const ip = require('ip');
@@ -23,8 +23,8 @@ const config = {
   // ----------------------------------
   // Server Configuration
   // ----------------------------------
-  server_host : ip.address(), // use string 'localhost' to prevent exposure on local network
-  server_port : process.env.PORT || 3000,
+  server_host : '52.53.207.69', // use string 'localhost' to prevent exposure on local network
+  server_port : process.env.PORT || 80,
 
   // ----------------------------------
   // Compiler Configuration
