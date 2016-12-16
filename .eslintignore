@@ -1,0 +1,11 @@
+blueprints/**/files/**
+coverage/**
+node_modules/**
+dist/**
+src/index.html
+config/**
+build/**
+store/**
+src/routes/Counter/modules/counter.js
+src/store/location.js
+tests/layouts/CoreLayout.spec.js
