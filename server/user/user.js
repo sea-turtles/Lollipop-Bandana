@@ -9,8 +9,8 @@ module.exports = app => {
 
   // POST /api/user
   app.post('/api/user', (req, res) => {
-    console.log('Got user profile', req.body);
-    res.sendStatus(200);
+    console.log('Got user profile HEY HEY', req.body.profile.name);
+    res.status(200).json(req.body);
   });
 
 };

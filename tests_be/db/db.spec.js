@@ -7,6 +7,8 @@ var addHouse = require('../../db/models/Houses.js').addHouse;
 var addLike = require('../../db/models/Likes.js').addLike;
 var addPic = require('../../db/models/Pics.js').addPic;
 var addWant = require('../../db/models/Wants.js').addWant;
+var addUpdateWant = require('../../db/models/Wants.js').addUpdateWant;
+var addUpdateHouse = require('../../db/models/Houses.js').addUpdateHouse;
 
 // Dummy data
 var db;
@@ -38,6 +40,7 @@ var fredHouse = {
   capacity: 4,
   smoking: false,
   pets: true,
+  genderPref: 2
 };
 var fredWant = {
   city: 'San Francisco',
@@ -339,6 +342,64 @@ describe('Database Models', function() {
               .then(function(result) {
                 expect(result[0].like).to.equal(fredLike.like);
                 done();
+              });
+          });
+      });
+  });
+  it('Should update a Want', function(done) {
+    var wantTwo = {
+      city: 'New York',
+      state: 'NY',
+      smoking: false,
+      pets: true,
+      minPrice: 0,
+      maxPrice: 1500
+    };
+    addUser(Fred)
+      .then(function() {
+        return addWant(fredWant, Fred.id)
+          .then(function() {
+            return addUpdateWant(wantTwo, Fred.id)
+              .then(function() {
+                return db.query('SELECT * FROM Wants WHERE userID = ?', Fred.id)
+                  .then(function(results) {
+                    expect(results[0].city).to.equal(wantTwo.city);
+                    expect(results[0].state).to.equal(wantTwo.state);
+                    expect(results[0].maxPrice).to.equal(wantTwo.maxPrice);
+                    done();
+                  })
+              });
+          });
+      });
+  });
+  it('Should update a House', function(done) {
+    var houseTwo = {
+      title: 'Test house',
+      addressOne: 'Test direction',
+      addressTwo: '',
+      city: 'New York',
+      state: 'NY',
+      description: 'Howdy',
+      price: 2000.00,
+      openRooms: 1,
+      capacity: 4,
+      smoking: false,
+      pets: true,
+      genderPref: 1
+    };
+    addUser(Fred)
+      .then(function() {
+        return addHouse(fredHouse, Fred.id)
+          .then(function() {
+            return addUpdateHouse(houseTwo, Fred.id)
+              .then(function() {
+                return db.query('SELECT * FROM Houses WHERE userID = ?', Fred.id)
+                  .then(function(results) {
+                    expect(results[0].city).to.equal(houseTwo.city);
+                    expect(results[0].state).to.equal(houseTwo.state);
+                    expect(results[0].openRooms).to.equal(houseTwo.openRooms);
+                    done();
+                  })
               });
           });
       });
